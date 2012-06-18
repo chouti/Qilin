@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+            body {
+                font-family: "helvetica neue",arial,sans-serif;
+                -webkit-user-select: none;
+            }
+            footer {
+                font-size: 10px;
+                text-align: right;
+            }
+
+            footer span {
+                color: #999;
+                padding-left: 5px;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+            footer span:hover {
+                color: #666;
+            }
+            #toggleBtn {
+                padding: 0 3px;
+                margin-bottom: 5px;
+            }
+            .separator {
+                height: 1px;
+                background-color: #E6E6E6;
+                margin-bottom: 5px;
+            }
+            .button {
+                width: auto;
+                height: 22px;
+                font-size: 13px;
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                border: 1px #EBEBEB solid;
+                padding: 0 10px;
+                margin: 0 0 10px 0;
+                line-height: 22px;
+                text-align: center; cursor: pointer;
+                text-shadow: #EEE 1px 1px 1px;
+                -webkit-transition-duration: 0.2s;
+                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#F7F7F7));
+            }
+
+            .button img {
+                margin: 0 5px 0 0;
+                top: 2px;
+                position: relative;
+            }
+
+            .button:hover {
+                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FAFAFA), to(#F0F0F0));
+                border-color: #D9D9D9;
+            }
+
+            .button label {
+                display: block;
+                padding-left: 15px;
+                text-indent: -15px;
+            }
+
+            .popup .button {
+                text-align: left;
+                width: auto;
+                padding: 0 3px;
+                margin-bottom: 5px;
+            }
+            .button.disabled, .button.disabled:hover {
+                color: #999;
+                border-color: #EBEBEB;
+                background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#F7F7F7));
+                opacity: 0.8;
+                cursor: default !important;
+            }
+
+            #extName {
+                padding-left: 22px;
+                background: url(images/logo_16.png) no-repeat left center;
+                cursor: pointer;
+            }
+
+            #menu {
+                width: 200px;
+            }
+
+            #menu ul {
+                list-style: none;
+                padding-left: 5px;
+                font-size: 12px;
+            }
+
+            #menu li {
+                cursor: pointer;
+            }
+            #menu li span, #menu li a {
+                padding-left: 22px;
+                display: block;
+            }
+            #toggleBtn span.checked {
+                background: url(images/checked_16.png) no-repeat left center;
+            }
+            #toggleBtn span.unchecked {
+                background: url(images/unchecked_16.png) no-repeat left center;
+            }
+            #pinAll, #menu li.capture {
+            }
+            #pinAll span {
+                background: url(images/pin_16.png) no-repeat left center;
+            }
+            #menu > ul > li.capture#captureAreaItem span {
+                background: url(images/capture_select_16.png) no-repeat left center;
+            }
+            #menu > ul > li.capture#captureWindowItem span {
+                background: url(images/capture_visible_16.png) no-repeat left center;
+            }
+            #menu > ul > li.capture#captureWebpageItem span {
+                background: url(images/capture_whole_16.png) no-repeat left center;
+            }
+    </style>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
+</head>
+<body>
+    <header id="extName" onclick="open_href('http://huaban.com/');">Huaban Collector</header>
+
+    <div id="menu" class="popup">
+        <ul>
+            <li id="pinAll" class="button disabled">
+                <span>Pin images/videos</span>
+            </li>
+            <li id="captureAreaItem" class="button capture disabled">
+                <span>Capture Selected Region</span>
+            </li>
+            <li id="captureWindowItem" class="button capture disabled">
+                <span>Capture Visible Content</span>
+            </li>
+            <li id="captureWebpageItem" class="button capture disabled">
+                <span>Capture Whole Page</span>
+            </li>
+            <li class="seprator"></li>
+            <li id="toggleBtn" class="">
+                <span class="checked">Show pin button</span>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <span id="preferences" href="/preferences.html" target="qilin_preference" title="Preferences" onclick="open_href('preferences.html');">Preferences</span>
+        <span id="about" href="http://huaban.com/about/" target="_blank" title="About Huaban.com" onclick="open_href=('http://huaban.com/about');">About Huaban.com</span>
+    </footer>
+</body>
+</html>
