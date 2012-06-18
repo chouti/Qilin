@@ -12,5 +12,11 @@ function init(){
 			j[d].classList.add("disabled")
 		}
 	}
-	b.addEventListener
+	b.addEventListener("click",function(){
+		safari.self.tab.dispatchMessage("toggle",function(i){
+			var k = i.isToggleOn;
+			var l = b.getElementsByTagName("span")[0];
+			l.setAttribute("class", k ? "checked" : "unchecked")
+		});
+	})
 }
